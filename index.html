@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barbería Estilo</title>
+    <link rel="stylesheet" href="Styles.css">
+</head>
+<body>
+    <header>
+        <h1>Barbería Estilo</h1>
+        <nav>
+            <ul>
+                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#cortes">Cortes</a></li>
+                <li><a href="#precios">Precios</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="servicios">
+            <h2>Servicios</h2>
+            <p>Ofrecemos cortes de cabello, afeitados, y más.</p>
+        </section>
+
+        <section id="cortes" class="carrusel">
+            <h2>Cortes Destacados</h2>
+            <div class="carrusel-container">
+                <div class="carrusel-slide active">
+                    <img src="corte1.jpg" alt="Corte Clásico">
+                    <div class="info">
+                        <h3>Corte Clásico</h3>
+                        <p>Precio: $20</p>
+                    </div>
+                </div>
+                <div class="carrusel-slide">
+                    <img src="corte2.jpg" alt="Corte Moderno">
+                    <div class="info">
+                        <h3>Corte Moderno</h3>
+                        <p>Precio: $25</p>
+                    </div>
+                </div>
+                <div class="carrusel-slide">
+                    <img src="corte3.jpg" alt="Corte Fade">
+                    <div class="info">
+                        <h3>Corte Fade</h3>
+                        <p>Precio: $30</p>
+                    </div>
+                </div>
+            </div>
+            <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+            <button class="next" onclick="moveSlide(1)">&#10095;</button>
+        </section>
+
+        <section id="precios">
+            <h2>Precios</h2>
+            <ul>
+                <li>Corte de cabello: $20</li>
+                <li>Afeitado: $15</li>
+                <li>Corte y afeitado: $30</li>
+            </ul>
+        </section>
+
+        <section id="contacto">
+            <h2>Contacto</h2>
+            <form>
+                <input type="text" placeholder="Tu nombre" required>
+                <input type="email" placeholder="Tu email" required>
+                <textarea placeholder="Tu mensaje" required></textarea>
+                <button type="submit" class="animar">Enviar</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2024 Barbería Estilo. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+<script>let currentSlide = 0;
+
+    function showSlide(index) {
+        const slides = document.querySelectorAll('.carrusel-slide');
+        slides.forEach((slide, i) => {
+            slide.style.display = (i === index) ? 'block' : 'none';
+        });
+    }
+    
+    function moveSlide(direction) {
+        const slides = document.querySelectorAll('.carrusel-slide');
+        currentSlide = (currentSlide + direction + slides.length) % slides.length;
+        showSlide(currentSlide);
+    }
+    
+    // Inicializar el carrusel
+    showSlide(currentSlide);
+    </script>
+</html>

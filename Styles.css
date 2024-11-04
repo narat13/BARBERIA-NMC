@@ -1,0 +1,112 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: white;
+    color: black;
+}
+
+header {
+    background-color: orange;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+nav a:hover {
+    background-color: black;
+}
+
+main {
+    padding: 20px;
+}
+
+section {
+    margin: 20px 0;
+    border-radius: 10px;
+    padding: 15px;
+    border: 1px solid orange;
+    background-color: #f9f9f9;
+}
+
+.carrusel {
+    position: relative;
+    overflow: hidden;
+}
+
+.carrusel-container {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.carrusel-slide {
+    min-width: 100%;
+    box-sizing: border-box;
+}
+
+.carrusel-slide img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.info {
+    text-align: center;
+    margin-top: 10px;
+}
+
+button {
+    border-radius: 5px;
+    border: none;
+    background-color: orange;
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button.animar:hover {
+    background-color: black;
+    transform: scale(1.1);
+}
+
+button.prev, button.next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 165, 0, 0.8);
+}
+
+button.prev {
+    left: 10px;
+}
+
+button.next {
+    right: 10px;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: orange;
+    color: white;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
