@@ -1,69 +1,105 @@
+/* Diseño general */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: white;
-    color: black;
+    background-color: #f4f4f6;
+    color: #333;
 }
 
+/* Encabezado */
 header {
-    background-color: orange;
-    color: white;
+    background-color: #ffe5d9; /* Naranja pastel */
+    color: #333;
     padding: 20px;
     text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 0 0 20px 20px;
+}
+
+header h1 {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #333;
+}
+
+/* Contenedor del Menú de navegación */
+nav {
+    background-color: #ffbdb3; /* Fondo del menú en tono pastel */
+    padding: 15px 0; /* Aumenta el alto del menú */
+    border-radius: 0 0 20px 20px;
+    width: 100%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 0;
 }
 
 nav ul {
     list-style-type: none;
     padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
 }
 
 nav ul li {
     display: inline;
-    margin: 0 15px;
 }
 
 nav a {
-    color: white;
+    color: #333;
     text-decoration: none;
-    border-radius: 5px;
-    padding: 10px;
+    padding: 10px 20px;
+    border-radius: 15px;
+    font-weight: 500;
+    background-color: #ffe5d9; /* Naranja pastel claro */
+    transition: background-color 0.3s, color 0.3s;
 }
 
 nav a:hover {
-    background-color: black;
+    background-color: #ffc8b8; /* Otro tono pastel para hover */
+    color: #333;
 }
 
+/* Secciones */
 main {
-    padding: 20px;
+    padding: 40px;
 }
 
 section {
     margin: 20px 0;
-    border-radius: 10px;
-    padding: 15px;
-    border: 1px solid orange;
-    background-color: #f9f9f9;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
+/* Carrusel */
+/* Carrusel */
 .carrusel {
     position: relative;
     overflow: hidden;
+    max-width: 600px; /* Ancho máximo del carrusel */
+    margin: 0 auto; /* Centra el carrusel */
 }
 
 .carrusel-container {
     display: flex;
     transition: transform 0.5s ease;
+    align-items: center; /* Alinea verticalmente las imágenes */
+    justify-content: center; /* Centra las imágenes horizontalmente */
 }
 
 .carrusel-slide {
     min-width: 100%;
     box-sizing: border-box;
+    text-align: center; /* Centra el contenido de cada slide */
 }
 
 .carrusel-slide img {
-    width: 100%;
-    border-radius: 10px;
+    width: 80%; /* Ajusta el ancho de la imagen para que no ocupe todo el espacio */
+    border-radius: 20px;
+    margin: 0 auto; /* Centra la imagen */
 }
 
 .info {
@@ -71,26 +107,21 @@ section {
     margin-top: 10px;
 }
 
-button {
-    border-radius: 5px;
-    border: none;
-    background-color: orange;
-    color: white;
-    padding: 10px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-button.animar:hover {
-    background-color: black;
-    transform: scale(1.1);
-}
-
+/* Botones de navegación */
 button.prev, button.next {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background-color: rgba(255, 165, 0, 0.8);
+    background-color: rgba(255, 189, 179, 0.8); /* Naranja pastel transparente */
+    color: white;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 button.prev {
@@ -101,12 +132,18 @@ button.next {
     right: 10px;
 }
 
+button.prev:hover, button.next:hover {
+    background-color: #ffc8b8;
+}
+
+
+/* Footer */
 footer {
     text-align: center;
-    padding: 10px;
-    background-color: orange;
-    color: white;
-    position: relative;
-    bottom: 0;
-    width: 100%;
+    padding: 20px;
+    background-color: #ffe5d9;
+    color: #333;
+    border-radius: 20px 20px 0 0;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 40px;
 }
